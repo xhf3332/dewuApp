@@ -5,15 +5,15 @@
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-  components: { }
-}
+  name: "App",
+  components: {},
+};
 </script>
 
 <style>
-*{margin: 0;
-padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 </style>

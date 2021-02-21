@@ -1,18 +1,17 @@
 <template>
-  <div>wode
+  <div>
+    wode
     <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Footer from '../../components/footer/index.vue'
+import Footer from "../../components/footer/index.vue";
 export default {
-components:{
-  Footer
-}
-}
+  components: {
+    Footer,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

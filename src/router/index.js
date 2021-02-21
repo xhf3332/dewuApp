@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 Vue.use(VueRouter)
+
 const router = new VueRouter({
     mode: 'hash',
-    routes: [
-        {
+    routes: [{
             path: '/',
-        redirect:"/goumai"
+            redirect: "/goumai"
         },
         {
             path: "/goumai",
@@ -33,16 +34,33 @@ const router = new VueRouter({
         },
         {
             path: "/dewu",
-            component:()=>import('../views/dewu/index.vue')
+            component: () => import('../views/dewu/index.vue')
         },
         {
             path: "/mine",
-            component:()=>import('../views/mine/index.vue')
+            component: () => import('../views/mine/index.vue')
         },
         {
             path: "/fuwu",
-            component:()=>import('../views/fuwu/index.vue')
+            component: () => import('../views/fuwu/index.vue'),
+
+
         },
+        {
+            path: '/calendar',
+            component: () => import('../views/fuwu/top/calendar/index'),
+            meta: {
+                showtabbar: false,
+            },
+        },
+        {
+            path: '/information',
+            component: () => import('../views/fuwu/top/information/index')
+        },
+        {
+            path: '/answer',
+            component: () => import('../views/fuwu/top/answer/index')
+        }
     ],
     //    linkActiveClass:'active'
 })

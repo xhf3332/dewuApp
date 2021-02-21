@@ -6,6 +6,7 @@
       <router-link tag="li" to="fuwu">服务</router-link>
       <router-link tag="li" to="mine"> 我的</router-link>
     </ul>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -20,6 +21,7 @@ export default {};
   left: 0px;
   bottom: 0px;
   height: 40px;
+  background: #fff;
 }
 .footer ul li {
   list-style: none;
