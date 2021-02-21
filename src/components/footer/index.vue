@@ -1,10 +1,10 @@
 <template>
   <div class="footer">
     <ul>
-      <router-link tag="li" to="dewu">得物</router-link>
-      <router-link tag="li" to="goumai">购买</router-link>
-      <router-link tag="li" to="fuwu">服务</router-link>
-      <router-link tag="li" to="mine"> 我的</router-link>
+      <router-link tag="li" to="/dewu">得物</router-link>
+      <router-link tag="li" to="/goumai">购买</router-link>
+      <router-link tag="li" to="/fuwu">服务</router-link>
+      <router-link tag="li" to="/mine"> 我的</router-link>
     </ul>
     <router-view></router-view>
   </div>
