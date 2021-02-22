@@ -1,6 +1,6 @@
 <template>
   <div class="ffoot">
-    <router-link to="/" tag="div" id="top">
+    <div id="top">
       <div class="top">
         <p>鉴别服务开创者<span>/ 七大品牌 专业鉴别 快速精准</span></p>
         <van-icon name="arrow" color="#cecece" style="margin-right:0.5rem;" />
@@ -13,24 +13,24 @@
             <p>累计鉴别超过</p>
           </div>
         </div>
-        <button>免费鉴别</button>
+        <router-link tag="button" to="/ldentify">免费鉴别</router-link>
       </div>
-    </router-link>
-    <router-link to="/" tag="div" id="content">
+    </div>
+    <router-link to="/discuss" tag="div" id="content">
       <div class="discuss">
         <p>讨论区<span>/ 数千位资深鉴别大神在这里交流分享</span></p>
         <van-icon name="arrow" color="#cecece" />
       </div>
     </router-link>
     <div id="foot">
-      <div class="hot1">
+      <router-link tag="div" to="/hot1" class="hot1">
         <span>热门</span>
         <div>
           <p>闲鱼收的，无盒ub4.0,大神们能帮看下嘛</p>
           <p><span>85条回复</span><span>13条鉴别师回复</span></p>
         </div>
-      </div>
-      <div class="hot2">
+      </router-link>
+      <router-link tag="div" to="/hot2" class="hot2">
         <span>热门</span>
         <div>
           <p class="article">
@@ -39,8 +39,8 @@
           <p>哪些地方与正平的区别</p>
           <p><span>63条回复</span><span>3条鉴别师回复</span></p>
         </div>
-      </div>
-      <div class="hot3">
+      </router-link>
+      <router-link tag="div" to="/hot3" class="hot3">
         <span>热门</span>
         <div>
           <p>
@@ -52,7 +52,7 @@
           </p>
           <p><span>50条回复</span><span>8条鉴别师回复</span></p>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>

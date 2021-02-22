@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/" tag="div" id="content">
+  <router-link to="/washing" tag="div" id="content">
     <div class="top">
       <p>焕然洗护<span>&nbsp;/ 专业清洗 潮人首选</span></p>
       <van-icon name="arrow" color="#cecece" style="margin-right:0.5rem;" />

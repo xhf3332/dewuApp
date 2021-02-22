@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/" tag="div" id="content">
+  <router-link to="/trading" tag="div" id="content">
     <div class="top">
       <p>95分闲置交易<span>/ 品质潮货 低至3折</span></p>
       <van-icon name="arrow" color="#cecece" style="margin-right:0.5rem;" />

@@ -8,6 +8,8 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <link rel="stylesheet" href="../package/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./fonts/iconfont.css" />
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script src="./fonts/iconfont.js"></script>
     <style>
@@ -17,6 +19,15 @@
         vertical-align: -0.15em;
         fill: currentColor;
         overflow: hidden;
+      }
+      @font-face {
+        font-family: "iconfont";
+        src: url("./fonts/iconfont.eot");
+        src: url("./fonts/iconfont.eot?#iefix") format("embedded-opentype"),
+          url("./fonts/iconfont.woff2") format("woff2"),
+          url("./fontsiconfont.woff") format("woff"),
+          url("./fonts/iconfont.ttf") format("truetype"),
+          url("./fonts/iconfont.svg#iconfont") format("svg");
       }
     </style>
   </head>

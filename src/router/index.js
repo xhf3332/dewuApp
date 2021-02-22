@@ -154,7 +154,36 @@ const router = new VueRouter({
         {
             path: '/answer',
             component: () => import('../views/fuwu/top/answer/index')
+        },
+        {
+            path: '/washing',
+            component: () => import('../views/fuwu/contents/washing/index')
+        },
+        {
+            path: '/trading',
+            component: () => import('../views/fuwu/contents/trading/index')
+        },
+        {
+            path: '/ldentify',
+            component: () => import('../views/fuwu/foot/ldentify/index')
+        },
+        {
+            path: '/discuss',
+            component: () => import('../views/fuwu/foot/discuss/index')
+        },
+        {
+            path: '/hot1',
+            component: () => import('../views/fuwu/foot/hot1/index')
+        },
+        {
+            path: '/hot2',
+            component: () => import('../views/fuwu/foot/hot2/index')
+        },
+        {
+            path: '/hot3',
+            component: () => import('../views/fuwu/foot/hot3/index')
         }
+
     ],
     //    linkActiveClass:'active'
 })

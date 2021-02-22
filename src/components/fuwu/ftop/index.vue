@@ -1,20 +1,24 @@
 <template>
   <div class="top">
     <router-link tag="div" to="/calendar">
-      <svg class="icon" aria-hidden="true" style="font-size:20px;">
-        <use xlink:href="#icon-rili1"></use>
-      </svg>
+      <span
+        class="iconfont rili"
+        v-html="fonts"
+        style="font-size:20px;font-weight:600;"
+        >{{ fonts }}</span
+      >
+
       <span> 发 售 日 历</span>
     </router-link>
     <div class="top-right">
       <router-link tag="div" to="/information">
-        <svg class="icon" aria-hidden="true" style="font-size:25px;">
+        <svg class="icon" aria-hidden="true" style="font-size:20px;">
           <use xlink:href="#icon-jiluwenben"></use>
         </svg>
         <span> 资 讯</span>
       </router-link>
       <router-link tag="div" to="/answer">
-        <svg class="icon" aria-hidden="true" style="font-size:25px;">
+        <svg class="icon" aria-hidden="true" style="font-size:20px;">
           <use xlink:href="#icon-xiaoxitongzhi"></use>
         </svg>
         <span> 问 答</span>
@@ -33,13 +37,59 @@
 export default {
   components: {}, //import引入的组件需要注入到对象中才能使用
   data() {
-    return {};
+    return {
+      fonts: "",
+      list: [
+        "&#xe600;",
+        "&#xe602;",
+        "&#xe604;",
+        "&#xe603;",
+        "&#xe605;",
+        "&#xe60f;",
+        "&#xe606;",
+        "&#xe607;",
+        "&#xe60a;",
+        "&#xe60c;",
+        "&#xe608;",
+        "&#xe60b;",
+        "&#xe60d;",
+        "&#xe60e;",
+        "&#xe610;",
+        "&#xe612;",
+        "&#xe611;",
+        "&#xe613;",
+        "&#xe614;",
+        "&#xe616;",
+        "&#xe615;",
+        "&#xe618;",
+        "&#xe61a;",
+        "&#xe617;",
+        "&#xe619;",
+        "&#xe61c;",
+        "&#xe61b;",
+        "&#xe61e;",
+        "&#xe61d;",
+        "&#xe61f;",
+        "&#xe601;",
+      ],
+    };
   }, //这里存放数据
   computed: {}, //监听属性 类似于data概念
   watch: {}, //监控data中的数据变化
-  methods: {}, //方法集合
+  methods: {
+    times() {
+      var time1 = new Date();
+      var time2 = time1.getDate();
+      return time2;
+    },
+  }, //方法集合
   created() {}, //生命周期 - 创建完成（可以访问当前this实例）
-  mounted() {}, //生命周期 - 挂载完成（可以访问DOM元素）
+  mounted() {
+    var rili = this.times();
+    rili = this.list[rili - 1];
+    console.log(rili);
+    this.fonts = rili;
+  }, //生命周期 - 挂载完成（可以访问DOM元素）
   beforeCreate() {}, //生命周期 - 创建之前
   beforeMount() {}, //生命周期 - 挂载之前
   beforeUpdate() {}, //生命周期 - 更新之前
@@ -50,6 +100,16 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+span {
+  font-size: 13px;
+}
 .top {
   height: 40px;
   // border: 1px solid #f00;
@@ -73,18 +133,14 @@ export default {
     margin-right: 0.5rem;
     display: flex;
     justify-content: space-around;
-
     & > div {
       width: 4rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
       // border: 1px solid #f00;
     }
   }
-}
-span {
-  font-size: 13px;
 }
 
 * {
