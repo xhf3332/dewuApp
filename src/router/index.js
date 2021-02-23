@@ -1,47 +1,39 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 Vue.use(VueRouter)
+
 const router = new VueRouter({
     mode: 'hash',
-    routes: [
-        {
+    routes: [{
             path: '/',
-        redirect:"/goumai"
+            redirect: "/goumai"
         },
         {
             path: "/goumai",
-            component: () => import("../views/goumai/index.vue"),
-            // redirect:'/movie/city',
-            // children: [
-            //     {
-            //         path: 'city',
-            //         component:()=>import('../views/movie/city/index.vue')
-            //     },
-            //     {
-            //         path: 'reying',
-            //         component:()=>import('../views/movie/reying/index.vue')
-            //     },
-            //     {
-            //         path: 'jijiang',
-            //         component:()=>import('../views/movie/jijiang/index.vue')
-            //     },
-            //     {
-            //         path: 'sou',
-            //         component:()=>import('../views/movie/sou/index.vue')
-            //     }
-            // ]
+            component: () =>
+                import ("@/views/goumai/pages/index"),
+            children: [{
+                path: "detail",
+                name: 'detail',
+                component: () =>
+                    import ("@/views/goumai/pages/detail")
+            }]
         },
         {
             path: "/dewu",
-            component:()=>import('../views/dewu/index.vue')
+            component: () =>
+                import ('../views/dewu/index.vue')
         },
         {
             path: "/mine",
-            component:()=>import('../views/mine/index.vue')
+            component: () =>
+                import ('../views/mine/index.vue')
         },
         {
             path: "/fuwu",
-            component:()=>import('../views/fuwu/index.vue')
+            component: () =>
+                import ('../views/fuwu/index.vue')
         },
     ],
     //    linkActiveClass:'active'
