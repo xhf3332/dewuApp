@@ -29,45 +29,53 @@
         <span class="iconfont">&#xe650;</span>
       </div>
     </div>
-    <swiper
-      :slides-per-view="3"
-      :space-between="50"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange"
-    >
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-    </swiper>
+    <van-tabs v-model="active" scrollspy sticky>
+      <van-tab
+        v-for="(items, index) in 12"
+        :title="index + 1 + '月'"
+        :key="index"
+        line-width="0"
+      >
+      </van-tab>
+      <p>{{ yr }}</p>
+      <div class="contents">
+        <img src="" alt="" />
+        <div>
+          <p></p>
+          <div>
+            <p><span>发货价￥</span><span></span></p>
+            <span class="iconfont">&#xe621;</span>
+          </div>
+        </div>
+      </div>
+    </van-tabs>
   </div>
 </template>
 
 <script>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-// Import Swiper styles
-import "swiper/swiper.scss";
-
 export default {
-  components: { Swiper, SwiperSlide }, //import引入的组件需要注入到对象中才能使用
+  components: {}, //import引入的组件需要注入到对象中才能使用
   data() {
     return {
-      // list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-      // num: "",
+      active: 1,
+      yr: "",
     };
   }, //这里存放数据
   computed: {}, //监听属性 类似于data概念
   watch: {}, //监控data中的数据变化
   methods: {
-    onSwiper(swiper) {
-      console.log(swiper);
-    },
-    onSlideChange() {
-      console.log("slide change");
+    gettimes() {
+      var time = new Date();
+      var months = time.getMonth() + 1;
+      var dates = time.getDate();
+      var times = dates + "/" + months;
+      return times;
     },
   }, //方法集合
   created() {}, //生命周期 - 创建完成（可以访问当前this实例）
-  mounted() {}, //生命周期 - 挂载完成（可以访问DOM元素）
+  mounted() {
+    this.yr = this.gettimes();
+  }, //生命周期 - 挂载完成（可以访问DOM元素）
   beforeCreate() {}, //生命周期 - 创建之前
   beforeMount() {}, //生命周期 - 挂载之前
   beforeUpdate() {}, //生命周期 - 更新之前
@@ -116,6 +124,59 @@ export default {
   & > span {
     font-size: 12px;
     color: #666666;
+  }
+}
+.contents {
+  height: 5rem;
+  width: 100%;
+  border: 1px solid #f00;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & > img {
+    display: block;
+    width: 6rem;
+    height: 4rem;
+  }
+  & > div {
+    height: 4rem;
+    width: calc(100% - 7rem);
+    // border: 1px solid #f00;
+    & > p {
+      height: 2rem;
+      width: 100%;
+      border: 1px solid #ff0;
+    }
+    & > div {
+      height: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // border: 1px solid #ff0;
+      margin-top: 0.8rem;
+      & > p {
+        height: 1rem;
+        border: 1px solid #00f;
+        & > span {
+          float: left;
+          height: 1rem;
+          font-size: 12px;
+          line-height: 1rem;
+        }
+        & > span:nth-child(1) {
+          display: inline-block;
+          width: 6rem;
+          height: 1rem;
+          border: 1px solid #00f;
+        }
+        & > span:nth-child(2) {
+          display: inline-block;
+          width: 4rem;
+          height: 1rem;
+          border: 1px solid #00f;
+        }
+      }
+    }
   }
 }
 </style>
