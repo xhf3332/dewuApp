@@ -61,7 +61,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="scss" scoped>
 #box {
 	.van-tabs__wrap {
 		margin-bottom: 0.5rem;

@@ -123,7 +123,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="scss" scoped>
 .my-swipe .van-swipe-item {
 	height: 6.6rem;
 	color: #fff;

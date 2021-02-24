@@ -11,7 +11,14 @@ const router = new VueRouter({
         },
         {
             path: "/goumai",
-            component: () => import("../views/goumai/index.vue"),
+            component: () =>
+                import("../views/goumai/pages/index.vue"),
+            children: [{
+                path: "detail",
+                name: 'detail',
+                component: () =>
+                    import("../views/goumai/pages/detail.vue")
+            }]
         },
         {
             path: "/dewu",
