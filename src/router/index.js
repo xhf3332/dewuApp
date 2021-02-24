@@ -11,31 +11,6 @@ const router = new VueRouter({
         },
         {
             path: "/goumai",
-<<<<<<< HEAD
-            component: () =>
-                import ("@/views/goumai/pages/index"),
-            children: [{
-                path: "detail",
-                name: 'detail',
-                component: () =>
-                    import ("@/views/goumai/pages/detail")
-            }]
-        },
-        {
-            path: "/dewu",
-            component: () =>
-                import ('../views/dewu/index.vue')
-        },
-        {
-            path: "/mine",
-            component: () =>
-                import ('../views/mine/index.vue')
-        },
-        {
-            path: "/fuwu",
-            component: () =>
-                import ('../views/fuwu/index.vue')
-=======
             component: () => import("../views/goumai/index.vue"),
         },
         {
@@ -195,7 +170,6 @@ const router = new VueRouter({
         {
             path: '/discuss',
             component: () => import('../views/fuwu/foot/discuss/index')
->>>>>>> c71bb6a3d8172b0cdf5c370d8e761069373b6bb3
         },
         {
             path: '/hot1',
